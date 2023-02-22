@@ -1,0 +1,13 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "lastname": "json-server",
+      "firstname": "typicode",
+      "gender":"nam",
+      "phone":"123456789",
+      "email":"a@gmail.com",
+      "salary":"3000"
+    }
+  ]
+}

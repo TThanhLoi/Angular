@@ -1,0 +1,90 @@
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-4 d-none d-lg-flex">
+                    <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
+                      class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+                  </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                        </div>
+                        <form class="user" [formGroup]="signupForm" (ngSubmit)="signupsubmit()">
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="username"
+                                    placeholder="User name" formControlName="username">
+
+                                    <div *ngIf="signupForm.controls['username'].hasError('required') && (signupForm.controls['username'].dirty||signupForm.controls['username'].touched)">
+                                        <small id="username" class="text-danger" >Email is required</small>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="email"
+                                    placeholder="Email Address" formControlName="email">
+
+                                    <div *ngIf="signupForm.controls['email'].hasError('required') && (signupForm.controls['email'].dirty||signupForm.controls['email'].touched)">
+                                        <small id="email" class="text-danger" >Email is required</small>
+                                    </div>
+
+                                    <div *ngIf="signupForm.controls['email'].hasError('email') && (signupForm.controls['email'].dirty||signupForm.controls['email'].touched)">
+                                        <small id="email" class="text-danger" >please enter a correct email format</small>
+                                    </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" class="form-control form-control-user"
+                                        id="password" placeholder="Password" formControlName="password">
+
+                                        <div *ngIf="signupForm.controls['password'].hasError('required') && (signupForm.controls['password'].dirty||signupForm.controls['password'].touched)">
+                                            <small id="password" class="text-danger" >Password is required</small>
+                                            <small  *ngIf="signupForm.controls['password'].hasError('minLength')" class="text-danger">12313</small>
+                                        </div>
+                                </div>
+                                
+                                
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user"
+                                        id="confirmPassword" placeholder="Repeat Password" formControlName="confirmPassword">
+
+                                        <div *ngIf="signupForm.controls['confirmPassword'].hasError('required') && (signupForm.controls['confirmPassword'].dirty||signupForm.controls['confirmPassword'].touched)">
+                                            <small id="confirmPassword" class="text-danger" >confirmPassword is required</small>
+                                        </div>
+
+                                        <div *ngIf="signupForm.errors?.['passwordsDontMatch']">
+                                            <small id="confirmPassword" class="text-danger" >Password Dont match</small>
+                                        </div>
+                                </div>
+                                
+                                
+                                
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Register Account
+                            </button>
+                            <hr>
+                            <a href="index.html" class="btn btn-google btn-user btn-block">
+                                <i class="fab fa-google fa-fw"></i> Register with Google
+                            </a>
+                            <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                            </a>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="forgot-password.html">Forgot Password?</a>
+                        </div>
+                        <div class="text-center">
+                            <a class="small" routerLink="/login">Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

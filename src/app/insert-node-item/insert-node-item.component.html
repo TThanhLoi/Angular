@@ -1,0 +1,37 @@
+
+<h1>ADD EMPLOYEE</h1>
+<form [formGroup]= "insertFrm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">id</label>
+        <input type="text" class="form-control" id="id" aria-describedby="" placeholder="Enter id" formControlName="id">
+        <div *ngIf="insertFrm.controls['id'].hasError('required') && (insertFrm.controls['id'].dirty||insertFrm.controls['id'].touched)">
+            <small id="id" class="text-danger" >ID is required</small></div>
+    </div>
+    <div class="form-group">
+        <label for="name">FirstName</label>
+        <input type="text" class="form-control" id="firstname" aria-describedby="" placeholder="Enter firstname" formControlName="firstname">
+    </div>
+    <div class="form-group">
+        <label for="gender">LastName</label>
+        <input type="text" class="form-control" id="lastname" aria-describedby="" placeholder="Enter lastname" formControlName="lastname">
+    </div>
+    <div class="form-group">
+        <label for="Price">gender</label>
+        <input type="text" class="form-control" id="gender" aria-describedby="" placeholder="Enter gender" formControlName="gender">
+    </div>
+    <div class="form-group">
+        <label for="salary">Email</label>
+        <input type="text" class="form-control" id="email" aria-describedby="" placeholder="Enter email" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label for="salary">Phone</label>
+        <input type="text" class="form-control" id="phone" aria-describedby="" placeholder="Enter phone" formControlName="phone">
+    </div> 
+    <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="text" class="form-control" id="salary" aria-describedby="" placeholder="Enter salary" formControlName="salary">
+    </div>  
+    <button type="submit" class="btn btn-primary" [disabled]="!insertFrm.valid">Submit</button>
+    <button type="button" class="btn btn-danger" id="right"  routerLink="/admin/nodeitem">BACK</button>
+</form>
+
